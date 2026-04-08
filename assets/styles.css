@@ -404,3 +404,38 @@ h1{
 }
 .review-card p{ margin:0 0 10px; color:rgba(17,24,39,.80); }
 .review-card .by{ font-weight:900; font-size:13px; color:rgba(17,24,39,.60); }
+<section class="section">
+  <div class="container">
+    <h2 style="margin:0 0 14px;">What People Say</h2>
+
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>“Everything was left spotless, and the repair and maintenance were explained clearly. Very fair pricing.”</p>
+        <div class="by">— Customer review</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>“During a snowstorm, they walked me through troubleshooting by phone and got the furnace running again.”</p>
+        <div class="by">— Customer review</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>“Helpful and trustworthy—great prices and never tries to oversell.”</p>
+        <div class="by">— Customer review</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>“Fast after-hours response, diagnosed it right away, and didn’t charge a fortune.”</p>
+        <div class="by">— Customer review</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px" class="small">
+      Want to book service? <a href="./contact.html"><strong>Request service here</strong></a> or call/text <a href="tel:+18475168221"><strong>(847) 516-8221</strong></a>.
+    </div>
+  </div>
+</section>
