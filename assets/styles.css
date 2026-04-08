@@ -80,9 +80,17 @@ header{
   min-width:220px;
 }
 .brand img{
-  height:54px;
+  height:110px;          /* BIG on desktop */
   width:auto;
+  max-width:320px;
+  object-fit:contain;
   display:block;
+}
+@media (max-width: 720px){
+  .brand img{
+    height:76px;         /* still readable on phones */
+    max-width:220px;
+  }
 }
 .brand .name{
   display:none; /* logo already has name */
