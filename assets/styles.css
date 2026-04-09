@@ -617,21 +617,11 @@ h1{
 
 @media (max-width: 720px){
   .actions{display:none;}
-  .menu-btn{display:inline-flex;}
-  nav{display:none;}
-  header[data-open="true"] nav{
-    display:block;
-    padding-bottom:10px;
-  }
-  header[data-open="true"] nav ul{
-    flex-direction:column;
-    align-items:stretch;
-    gap:0;
-    border-top:1px solid var(--border);
-    margin-top:10px;
-    padding-top:10px;
-  }
-  nav a{display:block}
+  .menu-btn{display:none;}
+  .header-inner{flex-wrap:wrap;}
+  nav{display:block; width:100%; border-top:1px solid var(--border); padding-top:8px; margin-top:6px;}
+  nav ul{flex-wrap:wrap; gap:4px;}
+  nav a{font-size:13px; padding:8px 8px;}
   .services-grid{grid-template-columns: 1fr;}
   .review-grid{grid-template-columns:1fr}
   .testimonial-grid{grid-template-columns:1fr}
