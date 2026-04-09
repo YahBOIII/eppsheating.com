@@ -240,34 +240,37 @@ h1{
 .panel .list{margin:10px 0 0; padding-left:18px; color:rgba(17,24,39,.80)}
 .panel .list li{margin:6px 0}
 
-/* Big detailed logo used in hero/footer only */
-.hero-logo{
+/* === Thin click-to-call logo strip (matches your small screenshot) === */
+.hero-logo-strip{
   margin-top:14px;
   background:#fff;
   border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:12px;
-  box-shadow:0 1px 0 rgba(17,24,39,.04);
+  border-radius:14px; /* slightly tighter than big cards */
+  padding:10px 12px;
   display:inline-flex;
   align-items:center;
-  text-decoration:none; /* since it's now an <a> */
+  justify-content:center;
+  width:fit-content;
+  max-width:100%;
+  box-shadow:0 1px 0 rgba(17,24,39,.04);
+  text-decoration:none;
 }
-.hero-logo:hover{
+.hero-logo-strip:hover{
   text-decoration:none;
   box-shadow:var(--shadow);
 }
-.hero-logo:focus-visible{
+.hero-logo-strip:focus-visible{
   outline:3px solid rgba(30,111,219,.35);
   outline-offset:3px;
 }
-.hero-logo img{
-  height:110px;     /* medium */
+.hero-logo-strip img{
+  height:48px;   /* thin strip look */
   width:auto;
   display:block;
   object-fit:contain;
 }
 @media (max-width: 720px){
-  .hero-logo img{ height:86px; }
+  .hero-logo-strip img{ height:44px; }
 }
 
 /* Services tiles (6) */
@@ -644,33 +647,4 @@ h1{
   .sticky-actions .btn{width:100%}
   .phone-band .phone-number{font-size:32px}
   .reviews-header .score-num{font-size:40px}
-}
-
-/* === Click-to-call logo callout (replaces hero placeholder) === */
-.logo-callout{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:100%;
-  padding:14px;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  background:#fff;
-  box-shadow:0 1px 0 rgba(17,24,39,.04);
-  text-decoration:none;
-}
-.logo-callout:hover{
-  text-decoration:none;
-  box-shadow:var(--shadow);
-}
-.logo-callout:focus-visible{
-  outline:3px solid rgba(30,111,219,.35);
-  outline-offset:3px;
-}
-.logo-callout-img{
-  width:100%;
-  max-width:520px;
-  height:auto;
-  display:block;
-  object-fit:contain;
 }
