@@ -108,11 +108,11 @@ header{
 
 /* Responsive logo rectangle */
 @media (max-width: 920px){
-  .brandmark{ width:220px; height:84px; }
+  .brandmark{ width:260px; height:100px; }
 }
 
 @media (max-width: 720px){
-  .brandmark{ width:100%; height:80px; flex:0 0 100%; }
+  .brandmark{ width:100%; height:110px; flex:0 0 100%; }
 }
 
 nav ul{
