@@ -88,7 +88,21 @@ header{
   border-radius:14px;
 }
 .brandmark:hover{ text-decoration:none; background:rgba(17,24,39,.03); }
+/* === Header logo sizing (brandmark as image) === */
+.brandmark{
+  flex-direction:row;      /* was column for text brand */
+  align-items:center;
+  gap:12px;
+  padding:6px 10px;
+}
 
+.brandmark img{
+  height:64px;             /* change to 72px if you want bigger */
+  width:auto;
+  display:block;
+  object-fit:contain;
+  flex-shrink:0;
+}
 .brandmark .brand-top{
   display:flex;
   align-items:baseline;
