@@ -622,6 +622,7 @@ h1{
 }
 
 @media (max-width: 720px){
+  .about-team-grid{grid-template-columns:1fr !important;}
   .actions{display:none;}
   .menu-btn{display:none;}
   .header-inner{flex-wrap:wrap; justify-content:center;}
