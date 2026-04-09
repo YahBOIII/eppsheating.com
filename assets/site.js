@@ -13,4 +13,24 @@
   document.querySelectorAll("nav a[data-page]").forEach(a => {
     if (a.getAttribute("data-page") === page) a.classList.add("active");
   });
+
+  // Hide sticky actions when near the bottom of the page on mobile
+  const stickyActions = document.querySelector(".sticky-actions");
+  if (stickyActions) {
+    function updateStickyVisibility() {
+      if (window.innerWidth > 720) {
+        stickyActions.classList.remove("sticky-actions--hidden");
+        return;
+      }
+      const distanceFromBottom = document.documentElement.scrollHeight - window.scrollY - window.innerHeight;
+      if (distanceFromBottom < 80) {
+        stickyActions.classList.add("sticky-actions--hidden");
+      } else {
+        stickyActions.classList.remove("sticky-actions--hidden");
+      }
+    }
+    window.addEventListener("scroll", updateStickyVisibility, { passive: true });
+    window.addEventListener("resize", updateStickyVisibility, { passive: true });
+    updateStickyVisibility();
+  }
 })();
