@@ -74,45 +74,39 @@ header{
 }
 
 /* =========================
-   HEADER LOGO (CONTAIN — NO CROPPING)
+   HEADER BRANDMARK (two-line stacked text)
    ========================= */
 
-/* Make the <a class="brandmark"> itself be the rectangle */
 .brandmark{
   display:flex;
-  align-items:center;
+  flex-direction:column;
+  align-items:flex-start;
   justify-content:center;
-
-  width:260px;         /* less wide */
-  height:96px;         /* taller */
-
-  padding:0;           /* IMPORTANT: no padding so the img can size cleanly */
-  border-radius:14px;
-  overflow:hidden;     /* keeps the logo inside rounded corners */
   text-decoration:none;
+  line-height:1.15;
+  padding:4px 0;
+  gap:3px;
 }
 
 .brandmark:hover{
   text-decoration:none;
-  background:rgba(17,24,39,.03);
 }
 
-/* Make the logo image fit INSIDE the rectangle without cropping */
-.brandmark img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:contain;     /* shows the entire logo */
-  object-position:center;
+.brand-name{
+  font-size:19px;
+  font-weight:900;
+  color:var(--ink);
+  letter-spacing:-.02em;
+  white-space:nowrap;
 }
 
-/* Responsive logo rectangle */
-@media (max-width: 920px){
-  .brandmark{ width:220px; height:84px; }
-}
-
-@media (max-width: 720px){
-  .brandmark{ width:190px; height:72px; }
+.brand-tagline{
+  font-size:11px;
+  font-weight:700;
+  color:var(--heat);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  white-space:nowrap;
 }
 
 nav ul{
