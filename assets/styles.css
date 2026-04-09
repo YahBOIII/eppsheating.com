@@ -616,7 +616,6 @@ h1{
 }
 
 @media (max-width: 720px){
-  .actions{display:none;}
   .menu-btn{display:inline-flex;}
   nav{display:none;}
   header[data-open="true"] nav{
@@ -632,6 +631,24 @@ h1{
     padding-top:10px;
   }
   nav a{display:block}
+
+  /* Always-visible action buttons: wrap onto their own row */
+  .header-inner{flex-wrap:wrap; gap:8px;}
+  .brandmark{flex:1 1 auto;}
+  .actions{
+    width:100%;
+    gap:8px;
+    order:3;
+  }
+  .actions .btn{
+    flex:1;
+    font-size:12px;
+    padding:9px 6px;
+    border-radius:10px;
+    white-space:nowrap;
+    justify-content:center;
+  }
+
   .services-grid{grid-template-columns: 1fr;}
   .review-grid{grid-template-columns:1fr}
   .testimonial-grid{grid-template-columns:1fr}
