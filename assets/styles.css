@@ -618,9 +618,10 @@ h1{
 @media (max-width: 720px){
   .actions{display:none;}
   .menu-btn{display:none;}
-  .header-inner{flex-wrap:wrap;}
+  .header-inner{flex-wrap:wrap; justify-content:center;}
+  .brandmark{ width:min(300px, calc(100% - 24px)); height:90px; margin:0 auto; }
   nav{display:block; width:100%; border-top:1px solid var(--border); padding-top:8px; margin-top:6px;}
-  nav ul{flex-wrap:wrap; gap:4px;}
+  nav ul{flex-wrap:wrap; gap:4px; justify-content:center;}
   nav a{font-size:13px; padding:8px 8px;}
   .services-grid{grid-template-columns: 1fr;}
   .review-grid{grid-template-columns:1fr}
