@@ -73,51 +73,46 @@ header{
   gap:18px;
 }
 
-/* ===== Premium header brand (text) ===== */
-.brand{
-  min-width: unset;
-}
+/* =========================
+   HEADER LOGO (FILL RECTANGLE)
+   ========================= */
 
+/* Make the <a class="brandmark"> itself be the rectangle */
 .brandmark{
   display:flex;
-  flex-direction:column;
-  gap:2px;
-  line-height:1.05;
-  text-decoration:none;
-  padding:8px 10px;
-  border-radius:14px;
-}
-.brandmark:hover{ text-decoration:none; background:rgba(17,24,39,.03); }
-
-/* === Header logo sizing (brandmark as image) === */
-.brandmark{
-  flex-direction:row;      /* was column for text brand */
   align-items:center;
-  gap:12px;
-  padding:6px 10px;
-}
-.brandmark img{
-  width:360px;        /* desktop rectangle width */
-  height:72px;        /* desktop rectangle height */
-  display:block;
-  object-fit:cover;   /* fill the rectangle (will crop if needed) */
-  object-position:center;
-  flex-shrink:0;
-  border-radius:10px; /* optional: matches your rounded look */
+  justify-content:center;
+
+  width:360px;         /* desktop rectangle width */
+  height:72px;         /* desktop rectangle height */
+
+  padding:0;           /* IMPORTANT: no padding so the img can fill */
+  border-radius:14px;
+  overflow:hidden;     /* hides cropped edges when using object-fit: cover */
+  text-decoration:none;
 }
 
+.brandmark:hover{
+  text-decoration:none;
+  background:rgba(17,24,39,.03);
+}
+
+/* Make the logo image fill the rectangle */
+.brandmark img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;     /* fill rectangle (crop if needed) */
+  object-position:center;
+}
+
+/* Responsive logo rectangle */
 @media (max-width: 920px){
-  .brandmark img{
-    width:280px;
-    height:64px;
-  }
+  .brandmark{ width:280px; height:64px; }
 }
 
 @media (max-width: 720px){
-  .brandmark img{
-    width:220px;
-    height:56px;
-  }
+  .brandmark{ width:220px; height:56px; }
 }
 
 nav ul{
@@ -243,7 +238,7 @@ h1{
   margin-top:14px;
   background:#fff;
   border:1px solid var(--border);
-  border-radius:14px; /* slightly tighter than big cards */
+  border-radius:14px;
   padding:10px 12px;
   display:inline-flex;
   align-items:center;
@@ -262,7 +257,7 @@ h1{
   outline-offset:3px;
 }
 .hero-logo-strip img{
-  height:48px;   /* thin strip look */
+  height:48px;
   width:auto;
   display:block;
   object-fit:contain;
