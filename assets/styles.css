@@ -83,8 +83,8 @@ header{
   align-items:center;
   justify-content:center;
 
-  width:360px;         /* desktop rectangle width */
-  height:72px;         /* desktop rectangle height */
+  width:270px;         /* desktop rectangle width */
+  height:96px;         /* desktop rectangle height */
 
   padding:0;           /* IMPORTANT: no padding so the img can fill */
   border-radius:14px;
