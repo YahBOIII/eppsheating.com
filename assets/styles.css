@@ -250,6 +250,15 @@ h1{
   box-shadow:0 1px 0 rgba(17,24,39,.04);
   display:inline-flex;
   align-items:center;
+  text-decoration:none; /* since it's now an <a> */
+}
+.hero-logo:hover{
+  text-decoration:none;
+  box-shadow:var(--shadow);
+}
+.hero-logo:focus-visible{
+  outline:3px solid rgba(30,111,219,.35);
+  outline-offset:3px;
 }
 .hero-logo img{
   height:110px;     /* medium */
