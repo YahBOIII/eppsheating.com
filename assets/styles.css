@@ -83,12 +83,12 @@ header{
   align-items:center;
   justify-content:center;
 
-  width:270px;         /* desktop rectangle width */
-  height:96px;         /* desktop rectangle height */
+  width:260px;     /* was 360px */
+  height:96px;     /* was 72px */
 
-  padding:0;           /* IMPORTANT: no padding so the img can fill */
+  padding:0;
   border-radius:14px;
-  overflow:hidden;     /* hides cropped edges when using object-fit: cover */
+  overflow:hidden;
   text-decoration:none;
 }
 
