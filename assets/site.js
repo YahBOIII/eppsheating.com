@@ -24,10 +24,10 @@
         return;
       }
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        brandmark.classList.add("brandmark--hidden");
-      } else if (currentScrollY < lastScrollY) {
+      if (currentScrollY <= 80) {
         brandmark.classList.remove("brandmark--hidden");
+      } else if (currentScrollY > lastScrollY) {
+        brandmark.classList.add("brandmark--hidden");
       }
       lastScrollY = currentScrollY;
     }
