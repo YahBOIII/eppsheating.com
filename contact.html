@@ -107,20 +107,84 @@
           Fill this out and we’ll get back to you ASAP to schedule service.
         </p>
 
-        <div class="form-embed" style="margin-top:12px">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSctn8RNjPJGIxv7_menamur6LIIeS2js-FxkZW93k4UE3Ourw/viewform?embedded=true"
-            loading="lazy"
-            title="Epp’s Custom Heating & Air - Service Request Form"
-          ></iframe>
-        </div>
+        <!-- To activate: sign up at formspree.io, create a form for eppsheating@gmail.com, and replace YOUR_FORM_ID with your 8-character form ID -->
+        <form
+          id="service-request-form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          novalidate
+          style="margin-top:16px"
+        >
+          <input type="hidden" name="_subject" value="New Service Request &#8211; Epp&#39;s Custom Heating &amp; Air" />
 
-        <p class="small" style="margin-top:12px">
-          If the form doesn’t load, open it here:
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSctn8RNjPJGIxv7_menamur6LIIeS2js-FxkZW93k4UE3Ourw/viewform" target="_blank" rel="noreferrer">
-            <strong>Service Request Form</strong>
-          </a>
-        </p>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="sr-name">Full Name <span class="form-required">*</span></label>
+              <input class="form-input" id="sr-name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sr-phone">Phone Number <span class="form-required">*</span></label>
+              <input class="form-input" id="sr-phone" name="phone" type="tel" autocomplete="tel" placeholder="(847) 555-1234" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sr-email">Email Address <span class="form-required">*</span></label>
+            <input class="form-input" id="sr-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="sr-service">Service Type <span class="form-required">*</span></label>
+              <select class="form-select" id="sr-service" name="service_type" required>
+                <option value="">&#8212; Select a service &#8212;</option>
+                <option>Heating &#8211; Repair</option>
+                <option>Heating &#8211; Installation</option>
+                <option>Cooling &#8211; Repair</option>
+                <option>Cooling &#8211; Installation</option>
+                <option>Tune-Up / Clean &amp; Check</option>
+                <option>Water Heater / Water System</option>
+                <option>Plumbing &amp; Gas Piping</option>
+                <option>Indoor Air Quality</option>
+                <option>Commercial HVAC</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sr-time">Best Time to Reach You</label>
+              <select class="form-select" id="sr-time" name="best_time">
+                <option value="">&#8212; Anytime &#8212;</option>
+                <option>Morning (8 am &#8211; 12 pm)</option>
+                <option>Afternoon (12 pm &#8211; 5 pm)</option>
+                <option>Evening (5 pm &#8211; 8 pm)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Preferred Contact Method</label>
+            <div class="form-radio-group">
+              <label class="form-radio-label">
+                <input type="radio" name="contact_method" value="Phone" checked /> Phone Call
+              </label>
+              <label class="form-radio-label">
+                <input type="radio" name="contact_method" value="Text" /> Text Message
+              </label>
+              <label class="form-radio-label">
+                <input type="radio" name="contact_method" value="Email" /> Email
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sr-desc">Describe the Issue <span class="form-required">*</span></label>
+            <textarea class="form-textarea" id="sr-desc" name="description" rows="4" placeholder="Please briefly describe what’s going on…" required></textarea>
+          </div>
+
+          <div id="form-status" class="form-status" aria-live="polite"></div>
+
+          <button class="btn sun form-submit-btn" type="submit">Send Service Request</button>
+        </form>
       </div>
     </div>
     </section>
