@@ -140,6 +140,9 @@ nav a.active{
   gap:10px;
   align-items:center;
 }
+.actions .btn.primary{
+  padding:6px 14px;
+}
 
 .btn{
   display:inline-flex;
