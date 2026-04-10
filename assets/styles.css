@@ -638,15 +638,19 @@ h1{
     justify-content:center;
     background:#fff;
     border-bottom:1px solid var(--border);
-    padding:10px 20px;
+    padding:6px 8px;
+    width:100%;
+    box-sizing:border-box;
   }
   .mobile-logo-bar a{
     display:block;
     text-decoration:none;
+    width:100%;
   }
   .mobile-logo-bar img{
-    height:72px;
-    width:auto;
+    height:auto;
+    width:100%;
+    max-height:48px;
     display:block;
     object-fit:contain;
   }
