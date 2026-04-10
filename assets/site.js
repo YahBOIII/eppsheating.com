@@ -14,27 +14,6 @@
     if (a.getAttribute("data-page") === page) a.classList.add("active");
   });
 
-  // Hide/show logo on scroll for mobile
-  const brandmark = document.querySelector(".brandmark");
-  if (brandmark) {
-    let lastScrollY = window.scrollY;
-    function updateLogoVisibility() {
-      if (window.innerWidth > 720) {
-        brandmark.classList.remove("brandmark--hidden");
-        return;
-      }
-      const currentScrollY = window.scrollY;
-      if (currentScrollY <= 80) {
-        brandmark.classList.remove("brandmark--hidden");
-      } else if (currentScrollY > lastScrollY) {
-        brandmark.classList.add("brandmark--hidden");
-      }
-      lastScrollY = currentScrollY;
-    }
-    window.addEventListener("scroll", updateLogoVisibility, { passive: true });
-    window.addEventListener("resize", updateLogoVisibility, { passive: true });
-  }
-
   const stickyActions = document.querySelector(".sticky-actions");
   if (stickyActions) {
     function updateStickyVisibility() {

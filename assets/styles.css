@@ -120,17 +120,8 @@ header{
     height:auto;
     flex:0 0 100%;
     max-height:200px;
-    opacity:1;
-    transition: max-height .35s ease, opacity .3s ease, margin .3s ease, padding .3s ease;
   }
   .brandmark img{ height:auto; }
-  .brandmark--hidden{
-    max-height:0 !important;
-    opacity:0 !important;
-    margin:0 !important;
-    padding:0 !important;
-    pointer-events:none;
-  }
 }
 
 nav ul{
@@ -646,8 +637,9 @@ h1{
   .about-team-grid{grid-template-columns:1fr !important;}
   .actions{display:none;}
   .menu-btn{display:none;}
+  header{position:static;}
   .header-inner{flex-wrap:wrap; justify-content:center;}
-  nav{display:block; width:100%; border-top:1px solid var(--border); padding-top:8px; margin-top:6px;}
+  nav{display:block; width:100%; position:sticky; top:0; z-index:50; background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:6px 20px; margin-top:6px;}
   nav ul{flex-wrap:wrap; gap:4px;}
   nav a{font-size:13px; padding:8px 8px;}
   .services-grid{grid-template-columns: 1fr;}
