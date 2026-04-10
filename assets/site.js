@@ -26,7 +26,7 @@
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         brandmark.classList.add("brandmark--hidden");
-      } else {
+      } else if (currentScrollY <= 50) {
         brandmark.classList.remove("brandmark--hidden");
       }
       lastScrollY = currentScrollY;
