@@ -65,6 +65,9 @@ header{
   background:#fff;
   border-bottom:1px solid var(--border);
 }
+@media (min-width: 921px){
+  header .container{ max-width:1440px; }
+}
 .header-inner{
   display:flex;
   align-items:center;
