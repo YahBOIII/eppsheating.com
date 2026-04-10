@@ -627,6 +627,31 @@ h1{
   .feature-grid{grid-template-columns:1fr 1fr}
 }
 
+/* Mobile logo bar — scrolls with page, not sticky */
+.mobile-logo-bar{
+  display:none;
+}
+@media (max-width: 720px){
+  .mobile-logo-bar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    padding:10px 20px;
+  }
+  .mobile-logo-bar a{
+    display:block;
+    text-decoration:none;
+  }
+  .mobile-logo-bar img{
+    height:72px;
+    width:auto;
+    display:block;
+    object-fit:contain;
+  }
+}
+
 @media (max-width: 720px){
   .about-team-grid{grid-template-columns:1fr !important;}
   .actions{display:none;}
