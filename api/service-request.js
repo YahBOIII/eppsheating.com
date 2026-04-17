@@ -71,7 +71,8 @@ export default async function handler(req, res) {
   }
 
   const host = process.env.SMTP_HOST || "smtp.gmail.com";
-  const port = Number.parseInt(process.env.SMTP_PORT || "587", 10);
+  const parsedPort = Number.parseInt(process.env.SMTP_PORT || "", 10);
+  const port = Number.isNaN(parsedPort) ? 587 : parsedPort;
   const secure = process.env.SMTP_SECURE === "true";
   const from = process.env.SMTP_FROM || process.env.SMTP_USER;
   const to = process.env.SERVICE_REQUEST_TO || DEFAULT_TO_EMAIL;
@@ -87,19 +88,6 @@ export default async function handler(req, res) {
   });
 
   const subject = `New Service Request: ${service}`;
-  const text = [
-    "New service request received.",
-    "",
-    `Name: ${name}`,
-    `Phone: ${phone}`,
-    `Email: ${email}`,
-    `Service: ${service}`,
-    `Address: ${address || "Not provided"}`,
-    "",
-    "Description:",
-    description
-  ].join("\n");
-
   const html = `
     <h2>New Service Request</h2>
     <p><strong>Name:</strong> ${escapeHtml(name)}</p>
@@ -116,7 +104,6 @@ export default async function handler(req, res) {
       from,
       to,
       subject,
-      text,
       html
     });
 
