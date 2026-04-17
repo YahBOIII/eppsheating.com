@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 
 const DEFAULT_TO_EMAIL = "EppsHeating@gmail.com";
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function escapeHtml(value) {
   return String(value || "")
@@ -24,6 +25,20 @@ function parseBody(body) {
   return {};
 }
 
+function sanitizeSingleLine(value) {
+  return String(value || "")
+    .replace(/[\u0000-\u001F\u007F]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function sanitizeMultiline(value) {
+  return String(value || "")
+    .replace(/\u0000/g, "")
+    .replace(/\r/g, "")
+    .trim();
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
@@ -31,13 +46,13 @@ export default async function handler(req, res) {
   }
 
   const data = parseBody(req.body);
-  const name = String(data.name || "").trim();
-  const phone = String(data.phone || "").trim();
-  const email = String(data.email || "").trim();
-  const service = String(data.service || "").trim();
-  const address = String(data.address || "").trim();
-  const description = String(data.description || "").trim();
-  const company = String(data.company || "").trim();
+  const name = sanitizeSingleLine(data.name);
+  const phone = sanitizeSingleLine(data.phone);
+  const email = sanitizeSingleLine(data.email);
+  const service = sanitizeSingleLine(data.service);
+  const address = sanitizeSingleLine(data.address);
+  const description = sanitizeMultiline(data.description);
+  const company = sanitizeSingleLine(data.company);
 
   if (company) {
     return res.status(400).json({ error: "Unable to submit request." });
@@ -45,6 +60,10 @@ export default async function handler(req, res) {
 
   if (!name || !phone || !email || !service || !description) {
     return res.status(400).json({ error: "Please complete all required fields." });
+  }
+
+  if (!EMAIL_PATTERN.test(email)) {
+    return res.status(400).json({ error: "Please enter a valid email address." });
   }
 
   if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
