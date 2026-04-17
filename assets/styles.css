@@ -791,6 +791,13 @@ h1{
 
 @media (max-width: 720px){
   .about-team-grid{grid-template-columns:1fr !important;}
+  .panel .list-two-columns{
+    column-count:2;
+    column-gap:18px;
+  }
+  .panel .list-two-columns li{
+    font-size:14px;
+  }
   .actions{display:none;}
   .menu-btn{display:none;}
   .brandmark{display:none;}
