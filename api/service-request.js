@@ -87,7 +87,8 @@ export default async function handler(req, res) {
     }
   });
 
-  const subject = `New Service Request: ${service}`;
+  const subjectService = sanitizeSingleLine(service);
+  const subject = `New Service Request: ${subjectService}`;
   const html = `
     <h2>New Service Request</h2>
     <p><strong>Name:</strong> ${escapeHtml(name)}</p>
