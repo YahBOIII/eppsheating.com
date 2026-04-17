@@ -8,16 +8,12 @@ The online request page lives at `service-request.html` and submits to `/api/ser
 
 Required Vercel environment variables:
 
-- `SMTP_USER`
-- `SMTP_PASSWORD`
+- `RESEND_API_KEY`
 
 Optional environment variables:
 
-- `SMTP_FROM`
-- `SMTP_HOST`
-- `SMTP_PORT`
-- `SMTP_SECURE`
 - `SERVICE_REQUEST_TO`
+- `SERVICE_REQUEST_FROM` (defaults to `Epp's Heating <onboarding@resend.dev>` for testing; set a verified sender domain in production)
 
 ## Local install
 

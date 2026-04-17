@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 function escapeHtml(value) {
   return String(value)
@@ -37,33 +37,17 @@ export default async function handler(req, res) {
   }
 
   try {
-    const transportConfig = process.env.SMTP_HOST
-      ? {
-          host: process.env.SMTP_HOST,
-          port: Number(process.env.SMTP_PORT || 587),
-          secure: String(process.env.SMTP_SECURE || 'false') === 'true',
-          auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASSWORD
-          }
-        }
-      : {
-          service: 'gmail',
-          auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASSWORD
-          }
-        };
+    const resendApiKey = process.env.RESEND_API_KEY;
+    if (!resendApiKey) {
+      throw new Error('RESEND_API_KEY is not configured');
+    }
 
-    const transporter = nodemailer.createTransport({
-      ...transportConfig
-    });
-
-    const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER;
+    const resend = new Resend(resendApiKey);
+    const fromAddress = process.env.SERVICE_REQUEST_FROM || 'Epp\'s Heating <onboarding@resend.dev>';
     const toAddress = process.env.SERVICE_REQUEST_TO || 'EppsHeating@gmail.com';
     const safeDescription = escapeHtml(description).replace(/\n/g, '<br>');
 
-    await transporter.sendMail({
+    await resend.emails.send({
       from: fromAddress,
       to: toAddress,
       subject: `New Service Request from ${name}`,
@@ -71,7 +55,7 @@ export default async function handler(req, res) {
       html: `<h2>New Service Request</h2><p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Phone:</strong> ${escapeHtml(phone)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Service:</strong> ${escapeHtml(service)}</p><p><strong>Address:</strong> ${address ? escapeHtml(address) : 'Not provided'}</p><p><strong>Description:</strong></p><p>${safeDescription}</p>`
     });
 
-    await transporter.sendMail({
+    await resend.emails.send({
       from: fromAddress,
       to: email,
       subject: 'Service Request Received - Epp\'s Custom Heating & Air',
