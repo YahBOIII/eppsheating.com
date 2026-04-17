@@ -239,6 +239,118 @@ h1{
 .panel .list{margin:10px 0 0; padding-left:18px; color:rgba(17,24,39,.80)}
 .panel .list li{margin:6px 0}
 
+.request-intro,
+.request-layout{
+  display:grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
+  gap:18px;
+}
+
+.request-intro{
+  align-items:start;
+  margin-bottom:18px;
+}
+
+.request-aside{
+  align-self:stretch;
+}
+
+.request-contact-card h2,
+.request-layout h2{
+  margin:0 0 10px;
+  font-size:24px;
+}
+
+.request-form-copy{
+  margin-bottom:16px;
+}
+
+.request-contact-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:16px 0;
+}
+
+.request-contact-meta{
+  display:grid;
+  gap:8px;
+}
+
+.request-form{
+  display:grid;
+  gap:14px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:14px;
+}
+
+.field{
+  display:grid;
+  gap:6px;
+}
+
+.field label{
+  font-size:14px;
+  font-weight:700;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid rgba(17,24,39,.18);
+  border-radius:12px;
+  font:inherit;
+  color:var(--ink);
+  background:#fff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  outline:none;
+  border-color:rgba(30,111,219,.6);
+  box-shadow:0 0 0 3px rgba(30,111,219,.12);
+}
+
+.field textarea{
+  resize:vertical;
+  min-height:140px;
+}
+
+.field-hidden{
+  display:none;
+}
+
+.request-submit{
+  width:100%;
+  cursor:pointer;
+}
+
+.request-submit[disabled]{
+  opacity:.7;
+  cursor:wait;
+}
+
+.form-status{
+  margin:0;
+  min-height:24px;
+  font-weight:700;
+}
+
+.form-status.is-success{
+  color:#0f766e;
+}
+
+.form-status.is-error{
+  color:#b91c1c;
+}
+
 /* === Thin click-to-call logo strip (matches your small screenshot) === */
 .hero-logo-strip{
   margin-top:14px;
@@ -625,6 +737,9 @@ h1{
   .split-section{grid-template-columns:1fr}
   .testimonial-grid{grid-template-columns:1fr 1fr}
   .feature-grid{grid-template-columns:1fr 1fr}
+  .request-intro,
+  .request-layout,
+  .form-grid{grid-template-columns:1fr}
 }
 
 /* Mobile logo bar — scrolls with page, not sticky */

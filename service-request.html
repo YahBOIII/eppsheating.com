@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Request Service | Epp’s Custom Heating & Air</title>
+  <meta name="description" content="Request HVAC service from Epp’s Custom Heating & Air in Fox River Grove, IL. Submit your heating, cooling, water heater, tune-up, or indoor air quality request online." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body data-page="service-request">
+  <div class="topbar">
+    <div class="container"><div class="row">
+      <div><strong>24/7 Service Available</strong> • Licensed • Bonded • Insured</div>
+      <div>
+        Call/Text: <a href="tel:+18475168221"><strong>(847) 516-8221</strong></a> •
+        <a href="mailto:EppsHeating@gmail.com"><strong>EppsHeating@gmail.com</strong></a>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="mobile-logo-bar">
+    <a href="./index.html" aria-label="Epp's Custom Heating & Air Home">
+      <img src="assets/logo.jpg" alt="Epp's Custom Heating & Air" />
+    </a>
+  </div>
+
+  <header data-open="false">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brandmark" href="./index.html" aria-label="Epp’s Custom Heating & Air Home">
+          <img src="assets/logo.jpg" alt="Epp’s Custom Heating & Air" />
+        </a>
+
+        <button class="menu-btn" data-menu-btn type="button">Menu</button>
+
+        <nav aria-label="Primary navigation">
+          <ul>
+            <li><a href="./index.html" data-page="home">Home</a></li>
+            <li><a href="./services.html" data-page="services">Services</a></li>
+            <li><a href="./service-areas.html" data-page="areas">Service Areas</a></li>
+            <li><a href="./about.html" data-page="about">About</a></li>
+            <li><a href="./service-request.html" data-page="service-request">Service Request</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <a class="btn sun" href="tel:+18475168221">Call Now</a>
+          <a class="btn secondary" href="sms:+18475168221">Text Us</a>
+          <a class="btn primary" href="./service-request.html">Request Service</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="phone-band">
+      <div class="container">
+        <div class="phone-band-inner">
+          <a class="phone-number" href="tel:+18475168221">(847) 516-8221</a>
+          <div class="phone-label">24/7 Service Available • Call or Text Anytime</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="request-intro">
+          <div>
+            <div class="kicker">
+              <span class="pill">Online Scheduling Request</span>
+              <span>Fast Follow-Up</span>
+            </div>
+            <h1>Request HVAC Service Online</h1>
+            <p class="subhead">
+              Use the form below to tell us what is going on. We’ll review your request and reach out to schedule service.
+              For urgent issues, call or text <strong>(847) 516-8221</strong> directly.
+            </p>
+          </div>
+
+          <aside class="panel request-aside">
+            <h3>What to include</h3>
+            <ul class="list">
+              <li>Your best callback number</li>
+              <li>Your address or service location</li>
+              <li>A short description of the issue</li>
+              <li>Any urgency, noises, leaks, or no-heat/no-cool details</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="request-layout">
+          <section class="panel request-contact-card">
+            <h2>Need help right away?</h2>
+            <p>For same-day or urgent service, calling or texting is the fastest option.</p>
+
+            <div class="request-contact-actions">
+              <a class="btn sun" href="tel:+18475168221">Call (847) 516-8221</a>
+              <a class="btn secondary" href="sms:+18475168221">Text Us</a>
+            </div>
+
+            <div class="request-contact-meta small">
+              <div><strong>Email:</strong> <a href="mailto:EppsHeating@gmail.com">EppsHeating@gmail.com</a></div>
+              <div><strong>Location:</strong> Fox River Grove, IL</div>
+              <div><strong>Coverage:</strong> Surrounding communities and the Chicago area</div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Service Request Form</h2>
+            <p class="small request-form-copy">Fill this out and we’ll get back to you as soon as possible to schedule service.</p>
+
+            <form id="serviceForm" class="request-form" method="POST" action="/api/service-request" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" autocomplete="name" required />
+                </div>
+
+                <div class="field">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" autocomplete="email" required />
+                </div>
+
+                <div class="field">
+                  <label for="service">Service Needed *</label>
+                  <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="Heating">Heating</option>
+                    <option value="Air Conditioning">Air Conditioning</option>
+                    <option value="Water Heater">Water Heater</option>
+                    <option value="Tune-Up">Tune-Up</option>
+                    <option value="Indoor Air Quality">Indoor Air Quality</option>
+                    <option value="Plumbing & Gas Piping">Plumbing & Gas Piping</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="address">Service Address</label>
+                <input type="text" id="address" name="address" autocomplete="street-address" />
+              </div>
+
+              <div class="field field-hidden" aria-hidden="true">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div class="field">
+                <label for="description">Description *</label>
+                <textarea id="description" name="description" rows="6" required></textarea>
+              </div>
+
+              <button type="submit" class="btn primary request-submit">Submit Request</button>
+              <p id="formStatus" class="form-status" aria-live="polite"></p>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="small"><strong>Epp’s Custom Heating &amp; Air</strong></div>
+          <div class="small">Fox River Grove, IL • Residential &amp; Commercial</div>
+          <div class="small">Licensed • Bonded • Insured • 24/7 Service Available</div>
+        </div>
+        <div>
+          <div class="small">Call/Text: <a href="tel:+18475168221">(847) 516-8221</a></div>
+          <div class="small">Email: <a href="mailto:EppsHeating@gmail.com">EppsHeating@gmail.com</a></div>
+          <div class="small"><a href="./index.html"><strong>Return Home</strong></a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-actions" aria-label="Quick actions">
+    <a class="btn sun" href="tel:+18475168221">Call</a>
+    <a class="btn secondary" href="sms:+18475168221">Text</a>
+    <a class="btn primary" href="./service-request.html">Request</a>
+  </div>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
