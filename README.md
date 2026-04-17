@@ -13,7 +13,7 @@ Required Vercel environment variables:
 Optional environment variables:
 
 - `SERVICE_REQUEST_TO`
-- `SERVICE_REQUEST_FROM` (defaults to `Epp's Heating <onboarding@resend.dev>`)
+- `SERVICE_REQUEST_FROM` (defaults to `Epp's Heating <onboarding@resend.dev>` for testing; set a verified sender domain in production)
 
 ## Local install
 
