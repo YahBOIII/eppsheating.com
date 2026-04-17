@@ -702,6 +702,16 @@ h1{
   font-size:13px;
   color:rgba(17,24,39,.60);
 }
+.reviews-title{
+  margin:0 0 6px;
+}
+.reviews-subtitle{
+  margin:0;
+  color:rgba(17,24,39,.70);
+}
+.reviews-cta{
+  margin-top:20px;
+}
 
 /* === About / Feature tiles === */
 .feature-grid{
