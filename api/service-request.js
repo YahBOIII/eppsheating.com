@@ -71,7 +71,7 @@ export default async function handler(req, res) {
   }
 
   const host = process.env.SMTP_HOST || "smtp.gmail.com";
-  const parsedPort = Number.parseInt(process.env.SMTP_PORT || "", 10);
+  const parsedPort = Number.parseInt(process.env.SMTP_PORT, 10);
   const port = Number.isNaN(parsedPort) ? 587 : parsedPort;
   const secure = process.env.SMTP_SECURE === "true";
   const from = process.env.SMTP_FROM || process.env.SMTP_USER;
@@ -79,7 +79,7 @@ export default async function handler(req, res) {
 
   const transporter = nodemailer.createTransport({
     host,
-    port: Number.isNaN(port) ? 587 : port,
+    port,
     secure,
     auth: {
       user: process.env.SMTP_USER,
