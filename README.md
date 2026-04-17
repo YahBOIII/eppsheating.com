@@ -19,6 +19,8 @@ Optional environment variables:
 - `SMTP_SECURE`
 - `SERVICE_REQUEST_TO`
 
+If `SERVICE_REQUEST_TO` is not set, service requests are sent to `EppsHeating@gmail.com` by default.
+
 ## Local install
 
 Install the serverless dependency before deploying or testing the API:
