@@ -65,8 +65,8 @@
 
     <section class="section alt">
       <div class="container">
-        <div class="request-intro">
-          <div>
+        <div class="request-layout">
+          <section class="panel">
             <div class="kicker">
               <span class="pill">Online Scheduling Request</span>
               <span>Fast Follow-Up</span>
@@ -76,38 +76,6 @@
               Use the form below to tell us what is going on. We’ll review your request and reach out to schedule service.
               For urgent issues, call or text <strong>(847) 516-8221</strong> directly.
             </p>
-          </div>
-
-          <aside class="panel request-aside">
-            <h3>What to include</h3>
-            <ul class="list">
-              <li>Your best callback number</li>
-              <li>Your address or service location</li>
-              <li>A short description of the issue</li>
-              <li>Any urgency, noises, leaks, or no-heat/no-cool details</li>
-            </ul>
-          </aside>
-        </div>
-
-        <div class="request-layout">
-          <section class="panel request-contact-card">
-            <h2>Need help right away?</h2>
-            <p>For same-day or urgent service, calling or texting is the fastest option.</p>
-
-            <div class="request-contact-actions">
-              <a class="btn sun" href="tel:+18475168221">Call (847) 516-8221</a>
-              <a class="btn secondary" href="sms:+18475168221">Text Us</a>
-            </div>
-
-            <div class="request-contact-meta small">
-              <div><strong>Email:</strong> <a href="mailto:EppsHeating@gmail.com">EppsHeating@gmail.com</a></div>
-              <div><strong>Location:</strong> Fox River Grove, IL</div>
-              <div><strong>Coverage:</strong> Surrounding communities and the Chicago area</div>
-            </div>
-          </section>
-
-          <section class="panel">
-            <h2>Service Request Form</h2>
             <p class="small request-form-copy">Fill this out and we’ll get back to you as soon as possible to schedule service.</p>
 
             <form id="serviceForm" class="request-form" method="POST" action="/api/service-request" novalidate>
@@ -160,6 +128,22 @@
               <button type="submit" class="btn primary request-submit">Submit Request</button>
               <p id="formStatus" class="form-status" aria-live="polite"></p>
             </form>
+          </section>
+
+          <section class="panel request-contact-card">
+            <h2>Need help right away?</h2>
+            <p>For same-day or urgent service, calling or texting is the fastest option.</p>
+
+            <div class="request-contact-actions">
+              <a class="btn sun" href="tel:+18475168221">Call (847) 516-8221</a>
+              <a class="btn secondary" href="sms:+18475168221">Text Us</a>
+            </div>
+
+            <div class="request-contact-meta small">
+              <div><strong>Email:</strong> <a href="mailto:EppsHeating@gmail.com">EppsHeating@gmail.com</a></div>
+              <div><strong>Location:</strong> Fox River Grove, IL</div>
+              <div><strong>Coverage:</strong> Surrounding communities and the Chicago area</div>
+            </div>
           </section>
         </div>
       </div>
