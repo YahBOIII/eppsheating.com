@@ -790,6 +790,13 @@ h1{
 }
 
 @media (max-width: 720px){
+  .topbar{
+    font-size:12px;
+  }
+  .topbar .row{
+    padding:8px 0;
+    gap:8px;
+  }
   .about-team-grid{grid-template-columns:1fr !important;}
   .panel .list-two-columns{
     column-count:2;
