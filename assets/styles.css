@@ -17,7 +17,7 @@ html,body{margin:0;padding:0}
 body{
   font-family:var(--font);
   color:var(--ink);
-  background:#fff;
+  background:#eaf6ff;
   line-height:1.5;
 }
 
