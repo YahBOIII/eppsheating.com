@@ -391,6 +391,36 @@ h1{
   .hero-logo-strip img{ height:44px; }
 }
 
+/* Services intro band */
+.services-offers-band{
+  padding:26px 0 18px;
+}
+.services-offers-intro{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+}
+.services-offers-intro h2{
+  margin:0 0 8px;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:900;
+  letter-spacing:-.02em;
+}
+.services-offers-intro h2 a{
+  text-decoration:none;
+}
+.services-offers-intro h2 a:hover{
+  text-decoration:none;
+}
+.services-offers-intro p{
+  margin:0 auto;
+  max-width:610px;
+  font-size:14px;
+  line-height:1.45;
+  color:rgba(17,24,39,.82);
+}
+
 /* Services tiles (6) */
 .services-grid{
   display:grid;
@@ -508,6 +538,8 @@ h1{
   .review-grid{grid-template-columns: 1fr 1fr;}
   .panel .list-two-columns{column-count:1;}
   nav ul{gap:10px}
+  .services-offers-intro h2{font-size:20px;}
+  .services-offers-intro p{max-width:560px;}
 }
 
 /* === Large phone call-to-action band === */
@@ -826,6 +858,9 @@ h1{
   .review-grid{grid-template-columns:1fr}
   .testimonial-grid{grid-template-columns:1fr}
   .feature-grid{grid-template-columns:1fr}
+  .services-offers-band{padding:22px 0 14px;}
+  .services-offers-intro h2{font-size:18px; margin-bottom:6px;}
+  .services-offers-intro p{font-size:13px; line-height:1.5; max-width:100%;}
   .sticky-actions{
     left:14px;
     right:14px;
