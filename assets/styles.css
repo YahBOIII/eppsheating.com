@@ -413,12 +413,17 @@ h1{
 .services-offers-intro h2 a:hover{
   text-decoration:none;
 }
-.services-offers-intro p{
+.services-offers-copy{
+  display:block;
   margin:0 auto;
   max-width:610px;
-  font-size:14px;
+  font-size:19.6px;
   line-height:1.45;
   color:rgba(17,24,39,.82);
+  text-decoration:none;
+}
+.services-offers-copy:hover{
+  text-decoration:none;
 }
 
 /* Services tiles (6) */
@@ -539,7 +544,7 @@ h1{
   .panel .list-two-columns{column-count:1;}
   nav ul{gap:10px}
   .services-offers-intro h2{font-size:20px;}
-  .services-offers-intro p{max-width:560px;}
+  .services-offers-copy{max-width:560px; font-size:18px;}
 }
 
 /* === Large phone call-to-action band === */
@@ -860,7 +865,7 @@ h1{
   .feature-grid{grid-template-columns:1fr}
   .services-offers-band{padding:22px 0 14px;}
   .services-offers-intro h2{font-size:18px; margin-bottom:6px;}
-  .services-offers-intro p{font-size:13px; line-height:1.5; max-width:100%;}
+  .services-offers-copy{font-size:18.2px; line-height:1.5; max-width:100%;}
   .sticky-actions{
     left:14px;
     right:14px;
