@@ -21,11 +21,19 @@
   });
 
   const moreMenu = document.querySelector(".nav-more");
-  const moreMenuBtn = moreMenu ? moreMenu.querySelector(".nav-more-btn") : null;
+  const moreMenuBtn = moreMenu?.querySelector(".nav-more-btn") ?? null;
   if (moreMenu && moreMenuBtn) {
     if (moreMenu.querySelector(".nav-more-menu a.active")) {
       moreMenuBtn.classList.add("active");
     }
+
+    const closeMoreMenu = (focusButton) => {
+      moreMenu.classList.remove("is-open");
+      moreMenuBtn.setAttribute("aria-expanded", "false");
+      if (focusButton) {
+        moreMenuBtn.focus();
+      }
+    };
 
     moreMenuBtn.addEventListener("click", () => {
       const isOpen = moreMenu.classList.toggle("is-open");
@@ -35,15 +43,13 @@
     document.addEventListener("click", (event) => {
       if (!moreMenu.classList.contains("is-open")) return;
       if (!moreMenu.contains(event.target)) {
-        moreMenu.classList.remove("is-open");
-        moreMenuBtn.setAttribute("aria-expanded", "false");
+        closeMoreMenu(false);
       }
     });
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && moreMenu.classList.contains("is-open")) {
-        moreMenu.classList.remove("is-open");
-        moreMenuBtn.setAttribute("aria-expanded", "false");
+        closeMoreMenu(true);
       }
     });
   }
