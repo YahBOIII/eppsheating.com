@@ -40,6 +40,12 @@
       moreMenuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
+    moreMenu.querySelectorAll(".nav-more-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMoreMenu(false);
+      });
+    });
+
     document.addEventListener("click", (event) => {
       if (!moreMenu.classList.contains("is-open")) return;
       if (!moreMenu.contains(event.target)) {
