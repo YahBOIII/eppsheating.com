@@ -118,7 +118,7 @@ header{
   .brandmark img{ height:auto; }
 }
 
-nav ul{
+nav > ul{
   list-style:none;
   display:flex;
   gap:18px;
@@ -132,9 +132,51 @@ nav a{
   padding:10px 10px;
   border-radius:10px;
 }
-nav a.active{
+nav a.active,
+.nav-more-btn.active{
   background:rgba(30,111,219,.10);
   text-decoration:none;
+}
+.nav-more{
+  position:relative;
+}
+.nav-more-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-weight:700;
+  font-size:14px;
+  padding:10px 10px;
+  border-radius:10px;
+  border:0;
+  background:transparent;
+  color:inherit;
+  cursor:pointer;
+}
+.nav-more-menu{
+  list-style:none;
+  position:absolute;
+  top:calc(100% + 8px);
+  right:0;
+  display:none;
+  flex-direction:column;
+  gap:4px;
+  min-width:180px;
+  margin:0;
+  padding:8px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  z-index:20;
+}
+.nav-more.is-open .nav-more-menu{
+  display:flex;
+}
+.nav-more-menu a{
+  display:block;
+  font-size:13px;
+  padding:8px 10px;
 }
 
 .actions{
@@ -1116,8 +1158,10 @@ a.feature-tile:hover{
   header{position:sticky; top:0;}
   .header-inner{flex-wrap:nowrap; justify-content:center; padding:0;}
   nav{display:block; width:100%; position:static; background:#fff; border-bottom:1px solid var(--border); padding:4px 8px; margin-top:0;}
-  nav ul{flex-wrap:wrap; gap:0; justify-content:space-around;}
+  nav > ul{flex-wrap:wrap; gap:0; justify-content:space-around;}
   nav a{font-size:11px; padding:8px 4px; white-space:nowrap;}
+  .nav-more-btn{font-size:11px; padding:8px 4px; white-space:nowrap;}
+  .nav-more-menu{right:auto; left:0; min-width:160px;}
   .services-grid{grid-template-columns: 1fr;}
   .review-grid{grid-template-columns:1fr}
   .testimonial-grid{grid-template-columns:1fr}
