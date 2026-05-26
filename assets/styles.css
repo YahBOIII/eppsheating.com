@@ -158,10 +158,11 @@ nav a.active,
   position:absolute;
   top:calc(100% + 8px);
   right:0;
-  display:none;
+  display:flex;
   flex-direction:column;
   gap:4px;
   min-width:180px;
+  max-width:min(220px, calc(100vw - 24px));
   margin:0;
   padding:8px;
   border:1px solid var(--border);
@@ -169,9 +170,17 @@ nav a.active,
   background:#fff;
   box-shadow:var(--shadow);
   z-index:20;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-6px);
+  pointer-events:none;
+  transition:opacity .18s ease, transform .18s ease, visibility .18s ease;
 }
 .nav-more.is-open .nav-more-menu{
-  display:flex;
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+  pointer-events:auto;
 }
 .nav-more-menu a{
   display:block;
@@ -1161,7 +1170,7 @@ a.feature-tile:hover{
   nav > ul{flex-wrap:wrap; gap:0; justify-content:space-around;}
   nav a{font-size:11px; padding:8px 4px; white-space:nowrap;}
   .nav-more-btn{font-size:11px; padding:8px 4px; white-space:nowrap;}
-  .nav-more-menu{right:auto; left:0; min-width:160px;}
+  .nav-more-menu{right:0; left:auto; min-width:160px;}
   .services-grid{grid-template-columns: 1fr;}
   .review-grid{grid-template-columns:1fr}
   .testimonial-grid{grid-template-columns:1fr}
