@@ -765,6 +765,9 @@ h1{
 }
 .reviews-cta{
   margin-top:20px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
 /* === About / Feature tiles === */
@@ -1113,8 +1116,8 @@ a.feature-tile:hover{
   header{position:sticky; top:0;}
   .header-inner{flex-wrap:nowrap; justify-content:center; padding:0;}
   nav{display:block; width:100%; position:static; background:#fff; border-bottom:1px solid var(--border); padding:4px 8px; margin-top:0;}
-  nav ul{flex-wrap:nowrap; gap:0; justify-content:space-around;}
-  nav a{font-size:11px; padding:10px 4px; white-space:nowrap;}
+  nav ul{flex-wrap:wrap; gap:0; justify-content:space-around;}
+  nav a{font-size:11px; padding:8px 4px; white-space:nowrap;}
   .services-grid{grid-template-columns: 1fr;}
   .review-grid{grid-template-columns:1fr}
   .testimonial-grid{grid-template-columns:1fr}
