@@ -33,6 +33,7 @@
     });
 
     document.addEventListener("click", (event) => {
+      if (!moreMenu.classList.contains("is-open")) return;
       if (!moreMenu.contains(event.target)) {
         moreMenu.classList.remove("is-open");
         moreMenuBtn.setAttribute("aria-expanded", "false");
@@ -40,7 +41,7 @@
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && moreMenu.classList.contains("is-open")) {
         moreMenu.classList.remove("is-open");
         moreMenuBtn.setAttribute("aria-expanded", "false");
       }
