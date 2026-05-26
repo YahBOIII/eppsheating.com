@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/contact.html",
+      "destination": "/service-request.html",
+      "permanent": true
+    }
+  ]
+}
